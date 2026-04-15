@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  background: #F7F2D9;
+  color: #002D18;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, serif;
+}
+
+/* custom audio player visual tweaks for webkit */
+audio.hg-audio::-webkit-media-controls-panel {
+  background-color: #004225;
+}
