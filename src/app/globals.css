@@ -6,13 +6,64 @@ html, body {
   background: #F7F2D9;
   color: #002D18;
   font-family: system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Georgia, serif;
 }
 
-/* custom audio player visual tweaks for webkit */
-audio.hg-audio::-webkit-media-controls-panel {
-  background-color: #004225;
+/* Disable iOS tap highlight, use our own focus styles */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Safe area utility for the sticky audio player on iPhones */
+.safe-pb {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.75rem);
+}
+
+.safe-mb {
+  margin-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Range input thumb styling for the audio player */
+input[type='range'].hg-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 24px;
+  background: transparent;
+}
+input[type='range'].hg-range::-webkit-slider-runnable-track {
+  height: 4px;
+  background: rgba(247, 242, 217, 0.35);
+  border-radius: 999px;
+}
+input[type='range'].hg-range::-moz-range-track {
+  height: 4px;
+  background: rgba(247, 242, 217, 0.35);
+  border-radius: 999px;
+}
+input[type='range'].hg-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -8px;
+  width: 20px;
+  height: 20px;
+  background: #F7F2D9;
+  border-radius: 999px;
+  border: 2px solid #004225;
+}
+input[type='range'].hg-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #F7F2D9;
+  border-radius: 999px;
+  border: 2px solid #004225;
 }

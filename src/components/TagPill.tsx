@@ -7,7 +7,7 @@ export default function TagPill({ label }: { label: string }) {
     (tagColours as Record<string, { bg: string; text: string }>)[label] ?? defaultColour;
   return (
     <span
-      className="inline-block text-xs font-medium px-3 py-1 rounded-full"
+      className="inline-block text-sm font-medium px-3 py-1 rounded-full"
       style={{ backgroundColor: colour.bg, color: colour.text }}
     >
       {label}

@@ -18,6 +18,9 @@ export default function CompleteButton({ recipeId }: { recipeId: string }) {
     setDone(getProgress().completedRecipes.includes(recipeId));
   }, [recipeId]);
 
+  const base =
+    'w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-[56px] px-6 rounded-full text-base font-medium transition-colors';
+
   const onClick = () => {
     if (done) {
       unmarkComplete(recipeId);
@@ -33,7 +36,7 @@ export default function CompleteButton({ recipeId }: { recipeId: string }) {
       <button
         type="button"
         disabled
-        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-hg-sage text-hg-darkgreen font-medium opacity-60"
+        className={`${base} bg-hg-sage text-hg-darkgreen opacity-60`}
       >
         Mark as complete
       </button>
@@ -46,13 +49,13 @@ export default function CompleteButton({ recipeId }: { recipeId: string }) {
       onClick={onClick}
       className={
         done
-          ? 'w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-hg-gold text-hg-darkgreen font-medium hover:bg-hg-gold/80'
-          : 'w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-hg-green text-hg-cream font-medium hover:bg-hg-darkgreen'
+          ? `${base} bg-hg-gold text-hg-darkgreen hover:bg-hg-gold/80 active:bg-hg-gold/80`
+          : `${base} bg-hg-green text-hg-cream hover:bg-hg-darkgreen active:bg-hg-darkgreen`
       }
     >
       {done ? (
         <>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
             <path d="M9 16.17 4.83 12l-1.41 1.41L9 19 21 7l-1.41-1.41z" />
           </svg>
           Completed, tap to undo
