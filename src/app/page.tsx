@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { chapters, meta, getRecipesForChapter } from '@/lib/cookbook';
 
@@ -6,9 +7,14 @@ export default function HomePage() {
     <div>
       <section className="bg-hg-green text-hg-cream">
         <div className="mx-auto max-w-6xl px-4 py-12 md:py-20">
-          <p className="text-xs uppercase tracking-widest text-hg-gold mb-3">
-            {meta.publisher}
-          </p>
+          <Image
+            src="/hgc-logo-green-bg.png"
+            alt="Hamilton George Care"
+            width={120}
+            height={120}
+            className="rounded-md mb-6"
+            priority
+          />
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-tight mb-4 max-w-3xl">
             {meta.title}
           </h1>

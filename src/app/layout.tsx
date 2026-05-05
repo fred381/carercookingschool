@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Cormorant_Garamond, Inter } from 'next/font/google';
+import Image from 'next/image';
 import Link from 'next/link';
 import './globals.css';
 
@@ -41,12 +42,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="mx-auto max-w-6xl px-4 flex items-center justify-between gap-3 min-h-[60px]">
             <Link
               href="/"
-              className="font-serif font-semibold tracking-wide flex items-center min-h-[44px] py-2 pr-2 min-w-0"
+              className="flex items-center min-h-[44px] py-1.5 pr-2 min-w-0"
+              aria-label="Hamilton George Care, home"
             >
-              <span className="text-base sm:hidden truncate">HG Cookery Book</span>
-              <span className="hidden sm:inline text-lg md:text-xl">
-                The Carer&apos;s Cookery Book
-              </span>
+              <Image
+                src="/hgc-logo-green-bg.png"
+                alt="Hamilton George Care"
+                width={44}
+                height={44}
+                className="rounded-sm"
+                priority
+              />
             </Link>
             <nav className="flex items-center gap-0.5 shrink-0">
               <Link
@@ -68,8 +74,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
 
         <footer className="bg-hg-darkgreen text-hg-cream">
-          <div className="mx-auto max-w-6xl px-4 py-6 text-center text-sm">
-            The Carer&apos;s Cookery Book · Hamilton George Care
+          <div className="mx-auto max-w-6xl px-4 py-8 flex flex-col items-center gap-4 text-center text-sm">
+            <Image
+              src="/hgc-logo-transparent.png"
+              alt="Hamilton George Care"
+              width={100}
+              height={100}
+              className="opacity-40"
+            />
+            <p>The Carer&apos;s Cookery Book · Hamilton George Care</p>
           </div>
         </footer>
       </body>
