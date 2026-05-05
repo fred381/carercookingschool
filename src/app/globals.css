@@ -5,7 +5,6 @@
 html, body {
   background: #F7F2D9;
   color: #002D18;
-  font-family: system-ui, -apple-system, sans-serif;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
 }
@@ -16,15 +15,13 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Georgia, serif;
+  font-family: var(--font-heading), Georgia, serif;
 }
 
-/* Disable iOS tap highlight, use our own focus styles */
 button, a {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Safe area utility for the sticky audio player on iPhones */
 .safe-pb {
   padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.75rem);
 }
@@ -33,7 +30,6 @@ button, a {
   margin-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-/* Range input thumb styling for the audio player */
 input[type='range'].hg-range {
   -webkit-appearance: none;
   appearance: none;
