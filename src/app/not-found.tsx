@@ -10,13 +10,13 @@ export default function NotFound() {
         We could not find that page
       </h1>
       <p className="text-base text-hg-darkgreen/80 mb-8">
-        The recipe or stage you asked for is not in the course yet.
+        The recipe or chapter you asked for does not seem to exist.
       </p>
       <Link
-        href="/"
-        className="inline-flex items-center justify-center min-h-[52px] bg-hg-green text-hg-cream px-6 rounded-full text-base font-medium hover:bg-hg-darkgreen"
+        href="/cookbook"
+        className="inline-flex items-center justify-center min-h-[52px] bg-hg-green text-hg-cream px-6 rounded-full text-base font-medium hover:bg-hg-darkgreen transition-colors"
       >
-        Back to the home page
+        Browse the cookbook
       </Link>
     </div>
   );

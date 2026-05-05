@@ -19,11 +19,11 @@ const body = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "The Carer's Cookery School",
-    template: "%s | Carer's Cookery School",
+    default: "The Carer's Cookery Book",
+    template: "%s | Carer's Cookery Book",
   },
   description:
-    'An audio led cooking course and interactive cookbook for professional live in carers, by Hamilton George Care.',
+    'Nourishing recipes for exceptional care, by Hamilton George Care. 99 recipes designed for professional carers cooking for older people.',
 };
 
 export const viewport: Viewport = {
@@ -43,18 +43,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               href="/"
               className="font-serif font-semibold tracking-wide flex items-center min-h-[44px] py-2 pr-2 min-w-0"
             >
-              <span className="text-base sm:hidden truncate">HG Cookery</span>
+              <span className="text-base sm:hidden truncate">HG Cookery Book</span>
               <span className="hidden sm:inline text-lg md:text-xl">
-                Carer&apos;s Cookery School
+                The Carer&apos;s Cookery Book
               </span>
             </Link>
             <nav className="flex items-center gap-0.5 shrink-0">
-              <Link
-                href="/stage/1"
-                className="flex items-center min-h-[44px] px-2.5 sm:px-3 text-sm sm:text-base hover:text-hg-gold transition-colors"
-              >
-                Course
-              </Link>
               <Link
                 href="/cookbook"
                 className="flex items-center min-h-[44px] px-2.5 sm:px-3 text-sm sm:text-base hover:text-hg-gold transition-colors"
@@ -62,7 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 Cookbook
               </Link>
               <Link
-                href="/"
+                href="/about"
                 className="flex items-center min-h-[44px] px-2.5 sm:px-3 text-sm sm:text-base hover:text-hg-gold transition-colors"
               >
                 About
@@ -71,11 +65,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </header>
 
-        <main className="pb-36 md:pb-0">{children}</main>
+        <main>{children}</main>
 
         <footer className="bg-hg-darkgreen text-hg-cream">
-          <div className="mx-auto max-w-6xl px-4 py-6 pb-28 md:pb-6 text-center text-sm">
-            The Carer&apos;s Cookery School · Hamilton George Care
+          <div className="mx-auto max-w-6xl px-4 py-6 text-center text-sm">
+            The Carer&apos;s Cookery Book · Hamilton George Care
           </div>
         </footer>
       </body>
