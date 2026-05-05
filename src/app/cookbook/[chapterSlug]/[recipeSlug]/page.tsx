@@ -10,7 +10,6 @@ import ConditionTag from '@/components/cookbook/ConditionTag';
 import CarerTipCard from '@/components/cookbook/CarerTipCard';
 import IddsiTable from '@/components/cookbook/IddsiTable';
 import IngredientScaler from '@/components/cookbook/IngredientScaler';
-import MarkAsCookedButton from '@/components/cookbook/MarkAsCookedButton';
 
 export function generateStaticParams() {
   return getAllCookbookRecipes().map((r) => {
@@ -174,10 +173,6 @@ export default function RecipePage({
               </section>
             )}
 
-            {/* Mark as cooked */}
-            <section className="pt-2">
-              <MarkAsCookedButton slug={recipe.slug} />
-            </section>
           </div>
 
           {/* Right column */}
