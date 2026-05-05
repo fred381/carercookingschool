@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from 'next';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Cormorant_Garamond, Inter } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -83,8 +85,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               className="opacity-40"
             />
             <p>The Carer&apos;s Cookery Book · Hamilton George Care</p>
+            <Link href="/privacy" className="text-hg-cream/50 hover:text-hg-cream/80 transition-colors">
+              Privacy
+            </Link>
           </div>
         </footer>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
