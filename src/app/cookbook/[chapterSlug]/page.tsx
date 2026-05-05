@@ -28,11 +28,8 @@ export default function ChapterPage({ params }: { params: { chapterSlug: string 
             className="inline-flex items-center min-h-[44px] text-sm text-hg-gold hover:text-hg-cream mb-1"
           >
             <span aria-hidden className="mr-1">←</span>
-            All chapters
+            All recipes
           </Link>
-          <p className="text-xs uppercase tracking-widest text-hg-gold mb-2">
-            Chapter {chapter.number}
-          </p>
           <h1 className="font-serif text-3xl md:text-5xl leading-tight mb-2">
             {chapter.name}
           </h1>

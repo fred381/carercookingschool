@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { chapters, meta, getRecipesForChapter } from '@/lib/cookbook';
+import { meta } from '@/lib/cookbook';
 
 export default function HomePage() {
   return (
@@ -22,8 +22,7 @@ export default function HomePage() {
             {meta.subtitle}
           </p>
           <p className="text-hg-cream/70 text-base max-w-2xl leading-relaxed">
-            {meta.recipe_count} recipes across {chapters.length} chapters, written for
-            professional carers cooking for older people.
+            {meta.recipe_count} recipes written for professional carers cooking for older people.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-3">
             <Link
@@ -43,7 +42,7 @@ export default function HomePage() {
       </section>
 
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-16">
-        <section className="mb-12 md:mb-16 max-w-3xl">
+        <section className="max-w-3xl">
           <blockquote className="border-l-4 border-hg-green pl-5 md:pl-6">
             <p className="text-lg md:text-xl leading-relaxed text-hg-darkgreen/90 font-serif italic">
               Cooking is one of the most intimate things a carer can do for a client.
@@ -54,34 +53,6 @@ export default function HomePage() {
           <p className="mt-4 text-base text-hg-darkgreen/70">
             Fred Lloyd George, co-founder, Hamilton George Care
           </p>
-        </section>
-
-        <section>
-          <h2 className="font-serif text-2xl md:text-3xl mb-5 text-hg-darkgreen">
-            Chapters
-          </h2>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {chapters.map((ch) => {
-              const recipes = getRecipesForChapter(ch.slug);
-              return (
-                <Link
-                  key={ch.slug}
-                  href={`/cookbook/${ch.slug}`}
-                  className="block bg-white border border-hg-sage/40 rounded-lg p-5 md:p-6 min-h-[100px] hover:border-hg-green active:bg-hg-sagelight transition-colors"
-                >
-                  <div className="text-xs text-hg-green/70 uppercase tracking-wider mb-1">
-                    Chapter {ch.number}
-                  </div>
-                  <h3 className="font-serif text-xl text-hg-darkgreen leading-snug mb-2">
-                    {ch.name}
-                  </h3>
-                  <p className="text-sm text-hg-darkgreen/70">
-                    {recipes.length} recipe{recipes.length !== 1 ? 's' : ''}
-                  </p>
-                </Link>
-              );
-            })}
-          </div>
         </section>
       </div>
     </div>

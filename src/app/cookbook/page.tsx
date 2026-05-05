@@ -58,9 +58,6 @@ export default function CookbookIndexPage() {
                   href={`/cookbook/${ch.slug}`}
                   className="block bg-white border border-hg-sage/40 rounded-lg p-5 min-h-[100px] hover:border-hg-green active:bg-hg-sagelight transition-colors"
                 >
-                  <div className="text-xs text-hg-green/70 uppercase tracking-wider mb-1">
-                    Chapter {ch.number}
-                  </div>
                   <h3 className="font-serif text-xl text-hg-darkgreen leading-snug mb-2">
                     {ch.name}
                   </h3>
