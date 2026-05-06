@@ -52,10 +52,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Link>
             <nav className="flex items-center gap-0.5 shrink-0">
               <Link
+                href="/guide"
+                className="flex items-center min-h-[44px] px-2.5 sm:px-3 text-sm sm:text-base hover:text-hg-gold transition-colors"
+              >
+                Guide
+              </Link>
+              <Link
                 href="/cookbook"
                 className="flex items-center min-h-[44px] px-2.5 sm:px-3 text-sm sm:text-base hover:text-hg-gold transition-colors"
               >
-                Cookbook
+                Recipes
               </Link>
               <Link
                 href="/about"
